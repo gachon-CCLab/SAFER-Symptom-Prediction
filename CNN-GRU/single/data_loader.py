@@ -20,7 +20,7 @@ class DataProcessor:
         
         # Convert 'targetTime' to datetime and sort
         data['targetTime'] = pd.to_datetime(data['targetTime'])
-        data.sort_values(['이름', 'targetTime'], inplace=True)
+        data.sort_values(['key_id', 'targetTime'], inplace=True)
         
         # Fill NaN values using k-NN imputer
         imputer = KNNImputer(n_neighbors=5)  # Use k-NN for imputing missing values
@@ -38,7 +38,7 @@ class DataProcessor:
         """
         Assign week numbers to the data based on the participant's earliest date.
         """
-        df['week'] = df.groupby('이름')[date_col].transform(lambda x: ((x - x.min()).dt.days // 7) + 1)
+        df['week'] = df.groupby('key_id')[date_col].transform(lambda x: ((x - x.min()).dt.days // 7) + 1)
         return df
 
     @staticmethod
@@ -47,7 +47,7 @@ class DataProcessor:
         Find the maximum sequence length for padding purposes.
         """
         max_length = 0
-        for _, group in df.groupby(['이름', 'week']):
+        for _, group in df.groupby(['key_id', 'week']):
             if len(group) > max_length:
                 max_length = len(group)
         return max_length
@@ -72,8 +72,8 @@ class DataProcessor:
         results = []
         target_means = df[target_cols].mean()
 
-        for id in df['이름'].unique():
-            patient_data = df[df['이름'] == id]
+        for id in df['key_id'].unique():
+            patient_data = df[df['key_id'] == id]
             for week in range(1, 5):  # Always consider weeks 1 to 4
                 if week in patient_data['week'].unique():
                     week_data = patient_data[patient_data['week'] == week]

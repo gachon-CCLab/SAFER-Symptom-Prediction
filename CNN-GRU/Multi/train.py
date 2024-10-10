@@ -8,11 +8,12 @@ from .model import CNNGRUModel
 from .data_loader import DataProcessor
 from .trainer import evaluate_model
 import pickle
+
 class ModelTrainer:
     @staticmethod
     def load_and_preprocess_data(data_paths, seq_cols, target_cols):
         """
-        데이터를 로드하고 전처리하는 함수.
+        Function to load and preprocess data.
         """
         # Load CSV files and concatenate them
         dataframes = [pd.read_csv(path) for path in data_paths]
@@ -24,10 +25,10 @@ class ModelTrainer:
         data = DataProcessor.transform_target(data)
 
         # Split data into train and test sets
-        patient_ids = data['이름'].unique()
+        patient_ids = data['key_id'].unique()
         train_ids, test_ids = train_test_split(patient_ids, test_size=0.2, random_state=42)
-        train_data = data[data['이름'].isin(train_ids)]
-        test_data = data[data['이름'].isin(test_ids)]
+        train_data = data[data['key_id'].isin(train_ids)]
+        test_data = data[data['key_id'].isin(test_ids)]
 
         # Find max sequence length and get data loaders
         max_length = DataProcessor.find_max_sequence_length_by_week(data, seq_cols)
@@ -38,7 +39,7 @@ class ModelTrainer:
     @staticmethod
     def initialize_model(seq_cols, target_cols, model_params, device):
         """
-        모델을 초기화하는 함수.
+        Function to initialize the model.
         """
         model = CNNGRUModel(
             input_dim=len(seq_cols),
@@ -54,13 +55,13 @@ class ModelTrainer:
     @staticmethod
     def train_model(model, train_loader, val_loader, training_params, target_cols, device):
         """
-        모델을 훈련하는 함수.
+        Function to train the model.
         """
         criterion = nn.BCELoss()
         optimizer = optim.AdamW(model.parameters(), lr=training_params.get('learning_rate', 0.0001))
         epochs = training_params.get('epochs', 50)
 
-        model.train()  # 훈련 모드로 전환
+        model.train()  # Switch to training mode
         for epoch in range(epochs):
             total_loss = 0
             for inputs, targets in train_loader:
@@ -75,11 +76,11 @@ class ModelTrainer:
             logging.info(f'Epoch [{epoch+1}/{epochs}], Train Loss: {avg_train_loss:.4f}')
 
             # Validation after each epoch
-            model.eval()  # 평가 모드로 전환
+            model.eval()  # Switch to evaluation mode
             val_loss = evaluate_model(model, val_loader, target_cols, device)
-            model.train()  # 훈련 모드로 다시 전환
+            model.train()  # Switch back to training mode
 
-            # val_loss가 dict인 경우 처리
+            # Handle val_loss if it's a dictionary
             if isinstance(val_loss, dict):
                 loss_value = val_loss.get('loss', 0.0)
                 logging.info(f'Epoch [{epoch+1}/{epochs}], Val Loss: {loss_value:.4f}')
@@ -87,11 +88,10 @@ class ModelTrainer:
                 logging.info(f'Epoch [{epoch+1}/{epochs}], Val Loss: {val_loss:.4f}')
 
             
-            
     # @staticmethod
     # def save_final_model(model, path='./model2/model/final_model.pkl'):
     #     """
-    #     최종 모델을 pickle로 저장하는 함수.
+    #     Function to save the final model as a pickle file.
     #     """
     #     with open(path, 'wb') as f:
     #         pickle.dump(model, f)
@@ -100,11 +100,11 @@ class ModelTrainer:
     # @staticmethod
     # def load_model(path='./model2/model/final_model.pkl', device='cpu'):
     #     """
-    #     pickle로 저장된 모델을 불러오는 함수.
+    #     Function to load the model saved as a pickle file.
     #     """
     #     with open(path, 'rb') as f:
     #         model = pickle.load(f)
     #     model.to(device)
-    #     model.eval()  # 모델을 평가 모드로 설정
+    #     model.eval()  # Set the model to evaluation mode
     #     print(f'Model loaded from {path}')
     #     return model

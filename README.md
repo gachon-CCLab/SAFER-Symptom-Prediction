@@ -30,8 +30,8 @@
 <p>&nbsp;</p>
 <h2>Contact Information of Thesis</h2>
 <ul>
-<li>Yong Min Ahn.&nbsp;<a href="mailto:aym@snu.ac.kr,">aym@snu.ac.kr</a></li>
 <li>Minseok Hong.&nbsp;<a href="mailto:garam21th@gmail.com,">garam21th@gmail.com</a></li>
+<li><strong>Yong Min Ahn.&nbsp;</strong><a href="mailto:aym@snu.ac.kr,">aym@snu.ac.kr</a></li>
 </ul>
 
 <p>&nbsp;</p>
@@ -39,6 +39,6 @@
 <ul>
 <li>Ri-Ra Kang.&nbsp;<a href="mailto:rirakang@gachon.ac.kr,">rirakang@gachon.ac.kr</a></li>
 <li>Yong-gyom Kim.&nbsp;<a href="mailto:gyom1204@gachon.ac.kr,">gyom1204@gachon.ac.kr</a></li>
-<li>KangYoon Lee.&nbsp;<a href="mailto:keylee@gachon.ac.kr,">keylee@gachon.ac.kr</a></li>
+<li><strong>KangYoon Lee.&nbsp;</strong><a href="mailto:keylee@gachon.ac.kr,">keylee@gachon.ac.kr</a></li>
 </ul>
 <p>&nbsp;</p>

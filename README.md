@@ -1,7 +1,7 @@
 <p>&nbsp;</p>
 <h2>Comprehensive Symptom Prediction in Acute Psychiatric Inpatients Using Wearable-Based Deep Learning Models: Development and Validation Study</h2>
 
-<li>Doi:10.2196/preprints.65994</li>
+<li><b>Doi:10.2196/preprints.65994</b></li>
 <li> Authors of source code : <a href="rirakang@gachon.ac.kr">rirakang@gachon.ac.kr,</a>&nbsp;<a href="gyom1204@gachon.ac.kr">gyom1204@gachon.ac.kr </a>
 &nbsp;<a href="keylee@gachon.ac.kr">keylee@gachon.ac.kr </a></li>
 <li>Current version of the project: ver. 0.1</li>

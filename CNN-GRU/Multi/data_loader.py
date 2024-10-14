@@ -3,8 +3,8 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.impute import KNNImputer
-
+# from sklearn.impute import KNNImputer
+from fancyimpute import SoftImpute
 class DataProcessor:
     
     @staticmethod
@@ -22,10 +22,14 @@ class DataProcessor:
         data['targetTime'] = pd.to_datetime(data['targetTime'])
         data.sort_values(['key_id', 'targetTime'], inplace=True)
         
+        # SoftImpute
+        data[numeric_features] = SoftImpute().fit_transform(data[numeric_features])
+        
+        # before
         # Fill NaN values using k-NN imputer
-        imputer = KNNImputer(n_neighbors=5)  # Use k-NN for imputing missing values
-        numeric_features = data.select_dtypes(include=[np.number]).columns.tolist()
-        data[numeric_features] = imputer.fit_transform(data[numeric_features])
+        # imputer = KNNImputer(n_neighbors=5)  # Use k-NN for imputing missing values
+        # numeric_features = data.select_dtypes(include=[np.number]).columns.tolist()
+        # data[numeric_features] = imputer.fit_transform(data[numeric_features])
         
         # Normalize data with Min-Max scaler
         scaler = MinMaxScaler(feature_range=(-1, 1))

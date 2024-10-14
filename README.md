@@ -1,12 +1,12 @@
 <p>&nbsp;</p>
-<h2>Comprehensive symptom prediction in acute psychiatric inpatients:
-development and validation of wearable-based deep learning models</h2>
-<ul>
+<h2>Comprehensive Symptom Prediction in Acute Psychiatric Inpatients Using Wearable-Based Deep Learning Models: Development and Validation Study
+</h2>
+<h5>Doi:10.2196/preprints.65994</h5>
+
 <li> Authors of source code : <a href="rirakang@gachon.ac.kr">rirakang@gachon.ac.kr,</a>&nbsp;<a href="gyom1204@gachon.ac.kr">gyom1204@gachon.ac.kr </a>
 &nbsp;<a href="keylee@gachon.ac.kr">keylee@gachon.ac.kr </a></li>
-
 <li>Current version of the project: ver. 0.1</li>
-</ul>
+
 <p>&nbsp;</p>
 <h3>Prerequisites</h3>
 <ol>
@@ -14,14 +14,18 @@ development and validation of wearable-based deep learning models</h2>
 <li>Python 3.7.16</li>
 </ol>
 
+<p>&nbsp;</p>
+<h2>How to use</h2>
 
-<h3>How to use</h3>
-<p>We present the source codes as an example of our research project to help a user who has a little background of computational analysis.</p>
+<li>We present the source codes as part of our research project to assist users with a basic understanding of computational analysis. For details on the context in which the code is used, please refer to the original article.</li>
+<p>&nbsp;</p>
+<h3>The repository contains the following key folders:</h3>
 
-<p>&lt;Step 0&gt;: see the folder "Data_Processing"</p>
-<p>&lt;Step 1&gt;: see the folder "CNNGRU"</p>
-<p>&lt;Step 2&gt;: see the folder "feature_importance"</p>
-</ul>
+<li>folder “Data_Processing”: Includes preprocessing scripts that handle sensor and nonsensor features, transforming them into a suitable input layer for the model.</li>
+<li>folder “CNNGRU”: Contains the code for building the deep learning model used in our research.</li>
+<li>folder “feature_importance”: Contains scripts to compute the permutation feature importance of the model, helping to identify which features most influence predictions.</li>
+
+<p>&nbsp;</p>
 <h2>Contact information</h2>
 <ul>
 <li>Ri-Ra Kang.&nbsp;<a href="mailto:rirakang@gachon.ac.kr,">rirakang@gachon.ac.kr</a></li>

@@ -28,7 +28,7 @@
 
 
 <p>&nbsp;</p>
-<h2>Contact Information of Thesis</h2>
+<h2>contact information of the original article</h2>
 <ul>
 <li>Minseok Hong.&nbsp;<a href="mailto:garam21th@gmail.com,">garam21th@gmail.com</a></li>
 <li><strong>Yong Min Ahn.&nbsp;</strong><a href="mailto:aym@snu.ac.kr,">aym@snu.ac.kr</a></li>

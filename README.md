@@ -20,9 +20,11 @@
 <p>&nbsp;</p>
 <b>The repository contains the following key folders:</b>
 
-<ol>folder “Data_Processing”: Includes preprocessing scripts that handle sensor and nonsensor features, transforming them into a suitable input layer for the model.</ol>
-<ol>folder “CNNGRU”: Contains the code for building the deep learning model used in our research.</ol>
-<ol>folder “feature_importance”: Contains scripts to compute the permutation feature importance of the model, helping to identify which features most influence predictions.</ol>
+<ol>
+<li>folder “Data_Processing”: Includes preprocessing scripts that handle sensor and nonsensor features, transforming them into a suitable input layer for the model.</li>
+<li>folder “CNNGRU”: Contains the code for building the deep learning model used in our research.</li>
+<li>folder “feature_importance”: Contains scripts to compute the permutation feature importance of the model, helping to identify which features most influence predictions.</li>
+</ol>
 
 
 <p>&nbsp;</p>

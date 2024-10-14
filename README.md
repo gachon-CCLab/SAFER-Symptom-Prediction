@@ -7,18 +7,18 @@
 <li>Current version of the project: ver. 0.1</li>
 
 <p>&nbsp;</p>
-<h5>Prerequisites</h5>
-<ol>
+<b>Prerequisites</b>
+
 <li>PyTorch version 2.2</li>
 <li>Python 3.7.16</li>
-</ol>
+
 
 <p>&nbsp;</p>
 <h2>How to use</h2>
 
 <li>We present the source codes as part of our research project to assist users with a basic understanding of computational analysis. For details on the context in which the code is used, please refer to the original article.</li>
 <p>&nbsp;</p>
-<h5>The repository contains the following key folders:</h5>
+<b>The repository contains the following key folders:</b>
 
 <li>folder “Data_Processing”: Includes preprocessing scripts that handle sensor and nonsensor features, transforming them into a suitable input layer for the model.</li>
 <li>folder “CNNGRU”: Contains the code for building the deep learning model used in our research.</li>

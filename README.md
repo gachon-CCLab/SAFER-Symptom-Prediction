@@ -7,7 +7,7 @@
 <li>Current version of the project: ver. 0.1</li>
 
 <p>&nbsp;</p>
-<b>Prerequisites</b>
+<h2>Prerequisites</h2>
 
 <li>PyTorch version 2.2</li>
 <li>Python 3.7.16</li>
